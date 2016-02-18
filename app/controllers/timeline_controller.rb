@@ -3,10 +3,10 @@ class TimelineController < ApplicationController
   end
 
   def search
-    getter = GetDate.new
-    @events = (1..3).map do |x|
-      if params["event#{x}"] != ""
-        event = Event.find_by(name: params["event#{x}"]) || getter.get(params["event#{x}"])
+    event_getter = GetDate.new
+    @events = (1..3).map do |i|
+      if params["event#{i}"] != ""
+        event = Event.find_by(name: params["event#{i}"]) || event_getter.find_dates(params["event#{i}"])
       end
     end
     @events.compact!
