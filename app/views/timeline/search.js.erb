@@ -1,0 +1,16 @@
+var container = document.getElementById('results');
+$('#results').empty();
+document.getElementById('search-form').reset();
+var items = new vis.DataSet([
+<% @events.each_with_index do |event, index| %>
+  <% if index < (@events.length - 1) %>
+    {id: '<%= index %>', content: '<%= event.name %>', start: '<%= event.start_string %>'<% if event.end_string  %>, end: '<%= event.end_string %>'<% end  %>},
+  <% else %>
+    {id: '<%= index %>', content: '<%= event.name %>', start: '<%= event.start_string %>'<% if event.end_string  %>, end: '<%= event.end_string %>'<% end  %>}
+  <% end  %>
+<% end %>
+]);
+// Configuration for the Timeline
+var options = {zoomMin: 1000000000};
+// Create a Timeline
+var timeline = new vis.Timeline(container, items, options);

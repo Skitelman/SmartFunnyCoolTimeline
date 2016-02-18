@@ -2,13 +2,25 @@
 <html>
 <head>
   <title>Smartfunnycooltimeline</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.13.0/vis.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.13.0/vis.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
+<footer class="footer">
+  <div class="container">
+    <p class='text-muted'>
+      <br>
+      Made by <a href="http://www.smartfunnycool.com">Sam Ghitelman</a>
+    </p>
+  </div>
+</footer>
 </body>
 </html>
