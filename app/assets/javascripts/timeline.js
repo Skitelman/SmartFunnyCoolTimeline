@@ -1,5 +1,8 @@
 $(document).ready( function(){
   $('#search-form').submit(function(){
+    $('#input_1').hide();
+    $('#input_2').hide();
+    $('#input_3').hide();
     $('#results').html('<div class="text-center"><h3>Loading</h3><div class="drip"></div></div>');
     var timeout1 = setTimeout(function(){
       $('#results').html("<div class='text-center'><h3 >Loading</h3><p>Sometimes Wolfram|Alpha takes a while to load</p><div class='drip'></div></div>");

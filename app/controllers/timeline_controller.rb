@@ -23,8 +23,8 @@ class TimelineController < ApplicationController
   private
   def event_params(i)
     {name:params["event#{i}"],
-    human: false,
+    human: params["user#{i}"]["human"] ? true : false,
     start_time: DateTime.parse(params["user#{i}"]["start_event"]),
-    end_time: DateTime.parse(params["user#{i}"]["end_event"])}
+    end_time: params["user#{i}"]["end_event"]!="" ? DateTime.parse(params["user#{i}"]["end_event"]):nil}
   end
 end
