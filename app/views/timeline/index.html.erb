@@ -8,20 +8,51 @@
 </div>
 <div class="row">
   <%= form_tag("/search", method: "post", remote: true, id:"search-form") do %>
-  <div class="col-md-4 col-md-offset-4 input-group">
+  <div class="col-md-6 col-md-offset-3 input-group">
     <span class="input-group-addon" id="basic-addon1">1</span>
     <%= text_field_tag 'event1', "", class:"form-control", placeholder:"Event 1", 'aria-describedby':"basic-addon1"%>
+    <span id="userDate1" class="input-group-addon" data-toggle="tooltip" data-placement="right" title="Select to input date yourself">
+      <%= check_box_tag "user1[event]" %>
+    </span>
+
+  </div>
+  <div id="input_1" class="col-md-6 col-md-offset-3 input-group" style='display:none'>
+    <span class="input-group-addon" id="date_start1">Start</span>
+    <%= date_field_tag "user1[start_event]", nil, class:"form-control", 'aria-describedby':"date_start1"%>
+    <span class="input-group-addon" id="date_end1">End (optional)</span>
+    <%= date_field_tag "user1[end_event]", nil, class:"form-control", 'aria-describedby':"date_end1"%>
   </div>
 
-  <div class="col-md-4 col-md-offset-4 input-group">
+  <div class="col-md-6 col-md-offset-3 input-group">
     <span class="input-group-addon" id="basic-addon2">2</span>
     <%= text_field_tag 'event2', "", class:"form-control", placeholder:"Event 2", 'aria-describedby':"basic-addon2"%>
+    <span id="userDate2" class="input-group-addon" data-toggle="tooltip" data-placement="right" title="Select to input date yourself">
+      <%= check_box_tag "user2[event]" %>
+    </span>
   </div>
 
-  <div class="col-md-4 col-md-offset-4 input-group">
+  <div id="input_2" class="col-md-6 col-md-offset-3 input-group" style='display:none'>
+    <span class="input-group-addon" id="date_start2">Start</span>
+    <%= date_field_tag "user2[start_event]", nil, class:"form-control", 'aria-describedby':"date_start2"%>
+    <span class="input-group-addon" id="date_end2">End (optional)</span>
+    <%= date_field_tag "user2[end_event]", nil, class:"form-control", 'aria-describedby':"date_end2"%>
+  </div>
+
+  <div class="col-md-6 col-md-offset-3 input-group">
     <span class="input-group-addon" id="basic-addon3">3</span>
     <%= text_field_tag 'event3', "", class:"form-control", placeholder:"Event 3", 'aria-describedby':"basic-addon3"%>
+    <span id="userDate3" class="input-group-addon" data-toggle="tooltip" data-placement="right" title="Select to input date yourself">
+      <%= check_box_tag "user3[event]" %>
+    </span>
   </div>
+
+  <div id="input_3" class="col-md-6 col-md-offset-3 input-group" style='display:none'>
+    <span class="input-group-addon" id="date_start2">Start</span>
+    <%= date_field_tag "user3[start_event]", nil, class:"form-control", 'aria-describedby':"date_start2"%>
+    <span class="input-group-addon" id="date_end2">End (optional)</span>
+    <%= date_field_tag "user3[end_event]", nil, class:"form-control", 'aria-describedby':"date_end2"%>
+  </div>
+
   <br>
   <div class="text-center">
     <%= submit_tag("Search", class:"btn btn-primary") %>

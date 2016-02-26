@@ -10,4 +10,14 @@ $(document).ready( function(){
       clearTimeout(timeout1);
       clearTimeout(timeout2);
   });
+
+  $('#user1_event').click(function(){
+    $('#input_1').toggle();
+  });
+  $('#user2_event').click(function(){
+    $('#input_2').toggle();
+  });
+  $('#user3_event').click(function(){
+    $('#input_3').toggle();
+  });
 });
